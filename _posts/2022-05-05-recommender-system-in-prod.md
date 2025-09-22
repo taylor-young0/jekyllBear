@@ -9,19 +9,24 @@ redirect_from:
 ---
   
 
-```
-> be you
-> have participated in kaggle recommender system competitions
-> datascientist.mp3
-> bossman says to recommend stuff for noobs
-> because they can’t search properly or whatever
-> ok bossman
-> no defined problem statement? 
-> no csv? 
-> no accuracy and mae test suite? 
-> no leaderboard?
+```swift
+@MainActor
+class MyViewModel: ObservableObject {
+    private var currentTask: Task<(), Never>?
+    @Published var currentColor: Color = .green
 
-what do /b/?
+    func doSomething() {
+        currentTask = Task {
+            currentColor = .yellow
+            try? await Task.sleep(for: .seconds(5))
+            currentColor = .red
+        }
+    }
+
+    func stopSomething() {
+        currentTask?.cancel()
+    }
+}
 ```
 
   
@@ -128,6 +133,25 @@ Models get stale. Underlying data may no longer be relevant. You gotta re-train 
 
 Airflow will let you schedule tasks and dependencies in what it calls DAGs. Which are just Graphs which have a particular Direction and are Acyclic. Use them. It is fancy cron and you can do some fancy cron stuff with it. 
 
+```swift
+@MainActor
+class MyViewModel: ObservableObject {
+    private var currentTask: Task<(), Never>?
+    @Published var currentColor: Color = .green
+
+    func doSomething() {
+        currentTask = Task {
+            currentColor = .yellow
+            try? await Task.sleep(for: .seconds(5))
+            currentColor = .red
+        }
+    }
+
+    func stopSomething() {
+        currentTask?.cancel()
+    }
+}
+```
   
 
 * * *
