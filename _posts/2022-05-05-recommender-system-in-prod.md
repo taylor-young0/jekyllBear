@@ -9,7 +9,7 @@ redirect_from:
 ---
   
 
-``` swift
+```swift
 @MainActor
 class MyViewModel: ObservableObject {
     private var currentTask: Task<(), Never>?
